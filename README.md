@@ -35,6 +35,18 @@ No Docker, no external services — just Node.
 
 ## Getting started
 
+Before you start, you'll need to make sure you have npm installed, in order to
+install project dependencies. You can check this by running:
+
+```bash
+npm -v
+```
+
+to see which version of npm you have installed. If you don't have it, you'll need
+to download and install Node.js from the [official site](https://nodejs.org/en).
+
+Once installed, run the following commands:
+
 ```bash
 git clone <this-repo-url>
 cd offer-tracker
