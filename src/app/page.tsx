@@ -15,7 +15,7 @@ export default async function DashboardPage() {
     <div className="flex flex-col gap-8">
       <div>
         <h1 className="text-2xl font-semibold text-slate-900">
-          {stats.totalCount} Applications
+          {stats.totalCount} {stats.totalCount === 1 ? "Application" : "Applications"}
         </h1>
         <p className="text-slate-500">Here&apos;s where your job search stands today.</p>
       </div>
