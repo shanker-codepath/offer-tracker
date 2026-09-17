@@ -21,6 +21,8 @@ export function FilterBar({
       <StatusFilter defaultValue={status} />
       <Select name="sort" defaultValue={sort ?? "date-desc"} aria-label="Sort by">
         <option value="date-desc">Date added (newest)</option>
+        <option value="company-asc">Company (A–Z)</option>
+        <option value="company-desc">Company (Z–A)</option>
       </Select>
       <Button type="submit" variant="secondary">
         Apply

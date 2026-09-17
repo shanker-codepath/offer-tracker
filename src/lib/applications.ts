@@ -5,11 +5,19 @@ import type { ApplicationFormInput } from "@/lib/validation";
 
 export type ApplicationListItem = Awaited<ReturnType<typeof getApplications>>[number];
 
+export type ApplicationSort = "date-desc" | "company-asc" | "company-desc";
+
 export interface GetApplicationsOptions {
   status?: Status;
   search?: string;
-  sort?: "date-desc";
+  sort?: ApplicationSort;
 }
+
+const sortOrderBy: Record<ApplicationSort, { createdAt: "desc" } | { company: "asc" | "desc" }> = {
+  "date-desc": { createdAt: "desc" },
+  "company-asc": { company: "asc" },
+  "company-desc": { company: "desc" },
+};
 
 export async function getApplications(options: GetApplicationsOptions = {}) {
   const { status, search, sort = "date-desc" } = options;
@@ -19,7 +27,7 @@ export async function getApplications(options: GetApplicationsOptions = {}) {
       userId: DEFAULT_USER_ID,
       ...(status ? { status } : {}),
     },
-    orderBy: sort === "date-desc" ? { createdAt: "desc" } : undefined,
+    orderBy: sortOrderBy[sort],
   });
 
   const filtered = search
