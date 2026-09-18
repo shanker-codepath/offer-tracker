@@ -23,7 +23,7 @@ export default async function ApplicationsPage({
     <div className="flex flex-col gap-6">
       <h1 className="text-2xl font-semibold text-slate-900">Applications</h1>
       <FilterBar status={status ?? ""} search={search} sort={sort} />
-      <ApplicationTable applications={applications} />
+      <ApplicationTable applications={applications} search={search} status={status} />
     </div>
   );
 }
