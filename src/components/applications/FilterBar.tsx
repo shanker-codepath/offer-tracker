@@ -18,7 +18,7 @@ export function FilterBar({
       <div className="min-w-[220px] flex-1">
         <SearchInput defaultValue={search} />
       </div>
-      <StatusFilter defaultValue={status} />
+      <StatusFilter defaultValue={status} key={status ?? ""} />
       <Select name="sort" defaultValue={sort ?? "date-desc"} aria-label="Sort by">
         <option value="date-desc">Date added (newest)</option>
         <option value="company-asc">Company (A–Z)</option>
