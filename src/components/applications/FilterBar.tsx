@@ -16,10 +16,10 @@ export function FilterBar({
   return (
     <form method="get" className="flex flex-wrap items-end gap-3">
       <div className="min-w-[220px] flex-1">
-        <SearchInput defaultValue={search} />
+        <SearchInput key={search ?? ""} defaultValue={search} />
       </div>
-      <StatusFilter defaultValue={status} />
-      <Select name="sort" defaultValue={sort ?? "date-desc"} aria-label="Sort by">
+      <StatusFilter key={status ?? ""} defaultValue={status} />
+      <Select key={sort ?? "date-desc"} name="sort" defaultValue={sort ?? "date-desc"} aria-label="Sort by">
         <option value="date-desc">Date added (newest)</option>
         <option value="company-asc">Company (A–Z)</option>
         <option value="company-desc">Company (Z–A)</option>
